@@ -1,13 +1,13 @@
 {
-  "name": "comp392-threejsboilerplate",
+  "name": "comp392-assignment1",
   "authors": [
-    "Tom Tsiliopoulos <tsiliopoulos@hotmail.com>"
+    "Josh Bender <jbendercode@gmail.com>"
   ],
-  "description": "COMP392-ThreeJSBoilerPlate for Advanced Graphics",
+  "description": "COMP392-Assignment1",
   "main": "",
   "moduleType": [],
   "license": "MIT",
-  "homepage": "http://github.com/CentennialCollege/COMP392-Lesson01-Part2",
+  "homepage": "http://github.com/jbendercode/Comp392-Assignment1",
   "ignore": [
     "**/.*",
     "node_modules",
