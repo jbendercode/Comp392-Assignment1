@@ -60,7 +60,7 @@ function init() {
     // Create Cube Man
     // Start with creating an empty group
     cubeMan = new Object3D();
-    cubeMan.position = new Vector3(0, 1, 0);
+    cubeMan.position.set(0, 1, 0);
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
     // Set Mat and Geometry to use for cubes
@@ -73,7 +73,9 @@ function init() {
                 cubes[(i * 9) + (j * 3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i * 9) + (j * 3) + h].castShadow = true;
                 cubes[(i * 9) + (j * 3) + h].receiveShadow = true;
-                cubes[(i * 9) + (j * 3) + h].position = new Vector3(0 + h, 10 + j, -5 + i);
+                cubes[(i * 9) + (j * 3) + h].position.x = -1 + h;
+                cubes[(i * 9) + (j * 3) + h].position.y = 5 + j;
+                cubes[(i * 9) + (j * 3) + h].position.z = -1 + i;
                 cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
             }
         }
