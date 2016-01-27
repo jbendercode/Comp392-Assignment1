@@ -70,7 +70,7 @@ function init() {
                 cubes[(i * 9) + (j * 3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i * 9) + (j * 3) + h].castShadow = true;
                 cubes[(i * 9) + (j * 3) + h].receiveShadow = true;
-                cubes[(i * 9) + (j * 3) + h].position = new Vector3(-1 + h, 4 + j, -1 + i);
+                cubes[(i * 9) + (j * 3) + h].position = new Vector3(0 + h, 10 + j, -5 + i);
                 cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
             }
         }
