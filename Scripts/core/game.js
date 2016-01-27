@@ -103,12 +103,12 @@ function init() {
     for (var i = 77; i < 98; i++) {
         cubeMan.remove(cubes[i]);
     }
-    for (var i = 98; i < 113; i++) {
+    for (var i = 98; i < 105; i++) {
         if (i % 7 == 2 && i % 7 == 6) {
             cubeMan.remove(cubes[i]);
         }
     }
-    for (var i = 113; i < 127; i++) {
+    for (var i = 105; i < 119; i++) {
         if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
             cubeMan.remove(cubes[i]);
         }
