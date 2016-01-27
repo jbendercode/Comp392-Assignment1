@@ -63,7 +63,7 @@ function init() {
     //Add a Plane to the Scene
     plane = new gameObject(
         new PlaneGeometry(16, 16, 1, 1),
-        new LambertMaterial({ color: 0x004466 }),
+        new LambertMaterial({ color: 0x00EEFF }),
         0, 0, 0);
 
     plane.rotation.x = -0.5 * Math.PI;
