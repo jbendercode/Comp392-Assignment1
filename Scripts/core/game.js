@@ -30,7 +30,6 @@ var scene;
 var renderer;
 var camera;
 var axes;
-var cube;
 var plane;
 var sphere;
 var ambientLight;
@@ -41,6 +40,7 @@ var stats;
 var step = 0;
 var cubeGeometry;
 var cubeMaterial;
+var cubeMan;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
@@ -55,15 +55,24 @@ function init() {
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
-    //Add a Cube to the Scene
+    // Create Cube Man
+    // Start with creating an empty group
+    cubeMan = new Object3D();
+    // Set Mat and Geometry to use for cubes
     cubeMaterial = new LambertMaterial({ color: 0x486D88 });
     cubeGeometry = new CubeGeometry(2, 2, 2);
-    cube = new Mesh(cubeGeometry, cubeMaterial);
-    cube.castShadow = true;
-    cube.receiveShadow = true;
-    cube.position.y = 1;
-    scene.add(cube);
-    console.log("Added Cube Primitive to scene...");
+    //Add Cubes to the Scene
+    for (var i = 0; i < 3; i++) {
+        var cube = new Mesh(cubeGeometry, cubeMaterial);
+        cube.castShadow = true;
+        cube.receiveShadow = true;
+        cube.position.z = 0;
+        cube.position.x = 0 + i * 2;
+        cube.position.y = 1 + i * 2;
+        cubeMan.add(cube);
+    }
+    scene.add(cubeMan);
+    console.log("Added Cube Man to scene...");
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x343434);
     scene.add(ambientLight);
