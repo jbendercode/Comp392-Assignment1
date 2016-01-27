@@ -101,6 +101,10 @@ function init() {
         }
     }
     
+    // Remove Uneeded Cubes from the array
+    delete cubes[0];
+    delete cubes[5];
+    
     
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
