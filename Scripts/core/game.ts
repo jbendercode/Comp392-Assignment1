@@ -93,9 +93,9 @@ function init() {
                 cubes[(i*9) + (j*3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i*9) + (j*3) + h].castShadow = true;
                 cubes[(i*9) + (j*3) + h].receiveShadow = true;
-                cubes[(i*9) + (j*3) + h].position.x = -1 + h * 1.05;
+                cubes[(i*9) + (j*3) + h].position.x = -2 + h * 1.05;
                 cubes[(i*9) + (j*3) + h].position.y = 10 + j * 1.05;
-                cubes[(i*9) + (j*3) + h].position.z = -5 + i * 1.05;
+                cubes[(i*9) + (j*3) + h].position.z = -4 + i * 1.05;
                 cubeMan.add(cubes[(i*9) + (j*3) + h]);
             }
         }
@@ -103,13 +103,13 @@ function init() {
     
     
     // Add an AmbientLight to the scene
-    ambientLight = new AmbientLight(0x343434);
+    ambientLight = new AmbientLight(0x949494);
     scene.add(ambientLight);
     console.log("Added an Ambient Light to Scene");
 	
     // Add a SpotLight to the scene
     spotLight = new SpotLight(0xFFFFFF);
-    spotLight.position.set(5.6, 23.1, 5.4);
+    spotLight.position.set(5.6, 43, 10.4);
     spotLight.rotation.set(-0.8, 42.7, 19.5);
     spotLight.castShadow = true;
     scene.add(spotLight);
