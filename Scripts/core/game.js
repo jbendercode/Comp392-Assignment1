@@ -81,9 +81,7 @@ function init() {
         }
     }
     // Remove Uneeded Cubes from the array
-    for (var i = 0; i < 140; i++) {
-        delete cubes[i];
-    }
+    // Head 
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
     scene.add(ambientLight);
