@@ -70,19 +70,20 @@ function init() {
     for (var i = 0; i < 5; i++) {
         for (var j = 0; j < 10; j++) {
             for (var h = 0; h < 5; h++) {
-                cubes[(i * 9) + (j * 3) + h] = new Mesh(cubeGeometry, cubeMaterial);
-                cubes[(i * 9) + (j * 3) + h].castShadow = true;
-                cubes[(i * 9) + (j * 3) + h].receiveShadow = true;
-                cubes[(i * 9) + (j * 3) + h].position.x = -2 + h * 1.1;
-                cubes[(i * 9) + (j * 3) + h].position.y = 1 + j * 1.1;
-                cubes[(i * 9) + (j * 3) + h].position.z = -4 + i * 1.1;
+                cubes[(i * 50) + (j * 5) + h] = new Mesh(cubeGeometry, cubeMaterial);
+                cubes[(i * 50) + (j * 5) + h].castShadow = true;
+                cubes[(i * 50) + (j * 5) + h].receiveShadow = true;
+                cubes[(i * 50) + (j * 5) + h].position.x = -2 + h * 1.1;
+                cubes[(i * 50) + (j * 5) + h].position.y = 1 + j * 1.1;
+                cubes[(i * 50) + (j * 5) + h].position.z = -4 + i * 1.1;
                 cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
             }
         }
     }
     // Remove Uneeded Cubes from the array
-    delete cubes[0];
-    delete cubes[5];
+    for (var i = 0; i < 140; i++) {
+        delete cubes[i];
+    }
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
     scene.add(ambientLight);
