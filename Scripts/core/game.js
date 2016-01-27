@@ -82,7 +82,7 @@ function init() {
     }
     // Remove Uneeded Cubes from the array
     // 1st Layer
-    for (var i = 0; i < 19; i++) {
+    for (var i = 200; i < 249; i++) {
         delete cubes[i];
     }
     // Add an AmbientLight to the scene
