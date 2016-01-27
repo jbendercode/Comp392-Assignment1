@@ -89,7 +89,7 @@ function init() {
     console.log("Added an Ambient Light to Scene");
 	
     // Add a SpotLight to the scene
-    spotLight = new SpotLight(0xffffff);
+    spotLight = new SpotLight(0xaaaaaa);
     spotLight.position.set(5.6, 23.1, 5.4);
     spotLight.rotation.set(-0.8, 42.7, 19.5);
     spotLight.castShadow = true;
