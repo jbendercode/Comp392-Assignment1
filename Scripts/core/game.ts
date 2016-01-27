@@ -93,9 +93,9 @@ function init() {
                 cubes[(i*9) + (j*3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i*9) + (j*3) + h].castShadow = true;
                 cubes[(i*9) + (j*3) + h].receiveShadow = true;
-                cubes[(i*9) + (j*3) + h].position.x = -1 + h;
-                cubes[(i*9) + (j*3) + h].position.y = 5 + j;
-                cubes[(i*9) + (j*3) + h].position.z = -1 + i;
+                cubes[(i*9) + (j*3) + h].position.x = -1 + h * 1.2;
+                cubes[(i*9) + (j*3) + h].position.y = 5 + j * 1.2;
+                cubes[(i*9) + (j*3) + h].position.z = -1 + i * 1.2;
                 cubeMan.add(cubes[(i*9) + (j*3) + h]);
             }
         }
