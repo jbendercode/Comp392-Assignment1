@@ -93,7 +93,7 @@ function init() {
                 cubes[(i*70) + (j*7) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i*70) + (j*7) + h].castShadow = true;
                 cubes[(i*70) + (j*7) + h].receiveShadow = true;
-                cubes[(i*70) + (j*7) + h].position.x = -2 + h * 1.1;
+                cubes[(i*70) + (j*7) + h].position.x = -3 + h * 1.1;
                 cubes[(i*70) + (j*7) + h].position.y = 1 + j * 1.1;
                 cubes[(i*70) + (j*7) + h].position.z = -4 + i * 1.1;
                 cubeMan.add(cubes[(i*70) + (j*7) + h]);
@@ -120,7 +120,12 @@ function init() {
     }
     
     // 2nd Layer
-    for (var i = 70; i < 98; i++){
+    for (var i = 0; i < 7; i++){
+        if (i != 2 || i != 4)
+        cubeMan.remove(cubes[i + 70]);
+    }
+    
+    for (var i = 77; i < 98; i++){
        cubeMan.remove(cubes[i]);
     }
     
@@ -202,7 +207,7 @@ function setupCamera(): void {
     camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.x = 3;
     camera.position.y = 26;
-    camera.position.z = -30.5;
+    camera.position.z = -27.5;
     camera.lookAt(new Vector3(0, 0, 0));
     console.log("Finished setting up Camera...");
 }
