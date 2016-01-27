@@ -60,10 +60,13 @@ function init() {
     // Create Cube Man
     // Start with creating an empty group
     cubeMan = new Object3D();
+    cubeMan.position = new Vector3(0, 1, 0);
+    scene.add(cubeMan);
+    console.log("Added Cube Man to scene...");
     // Set Mat and Geometry to use for cubes
     cubeMaterial = new LambertMaterial({ color: 0x486D88 });
     cubeGeometry = new CubeGeometry(1, 1, 1);
-    //Add Cubes to the Scene
+    //Add Cubes to the Cube Man
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             for (var h = 0; h < 3; h++) {
@@ -75,8 +78,6 @@ function init() {
             }
         }
     }
-    scene.add(cubeMan);
-    console.log("Added Cube Man to scene...");
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x343434);
     scene.add(ambientLight);
