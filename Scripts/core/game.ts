@@ -93,9 +93,9 @@ function init() {
                 cubes[(i*70) + (j*7) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i*70) + (j*7) + h].castShadow = true;
                 cubes[(i*70) + (j*7) + h].receiveShadow = true;
-                cubes[(i*70) + (j*7) + h].position.x = -5 + h * 1.1;
+                cubes[(i*70) + (j*7) + h].position.x = 3 + h * 1.1;
                 cubes[(i*70) + (j*7) + h].position.y = 1 + j * 1.1;
-                cubes[(i*70) + (j*7) + h].position.z = -4 + i * 1.1;
+                cubes[(i*70) + (j*7) + h].position.z = 0 + i * 1.1;
                 cubeMan.add(cubes[(i*70) + (j*7) + h]);
             }
         }
@@ -117,6 +117,15 @@ function init() {
         cubeMan.remove(cubes[29 + (i*7)]);
         cubeMan.remove(cubes[33 + (i*7)]);
         cubeMan.remove(cubes[34 + (i*7)]);
+    }
+    
+    // 2nd Layer
+    for (var i = 70; i < 98; i++){
+       cubeMan.remove(cubes[i]);
+    }
+    
+    for (var i = 119; i < 126; i++){
+       cubeMan.remove(cubes[i]);
     }
     
     
