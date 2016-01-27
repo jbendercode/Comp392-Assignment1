@@ -174,8 +174,8 @@ function setupRenderer(): void {
 function setupCamera(): void {
     camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.x = 0.6;
-    camera.position.y = 16;
-    camera.position.z = -20.5;
+    camera.position.y = 32;
+    camera.position.z = -40.5;
     camera.lookAt(new Vector3(0, 0, 0));
     console.log("Finished setting up Camera...");
 }
