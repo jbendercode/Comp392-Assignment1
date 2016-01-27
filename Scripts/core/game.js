@@ -60,16 +60,18 @@ function init() {
     cubeMan = new Object3D();
     // Set Mat and Geometry to use for cubes
     cubeMaterial = new LambertMaterial({ color: 0x486D88 });
-    cubeGeometry = new CubeGeometry(2, 2, 2);
+    cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Scene
     for (var i = 0; i < 3; i++) {
-        var cube = new Mesh(cubeGeometry, cubeMaterial);
-        cube.castShadow = true;
-        cube.receiveShadow = true;
-        cube.position.z = 0;
-        cube.position.x = 0 + i * 2;
-        cube.position.y = 1 + i * 2;
-        cubeMan.add(cube);
+        for (var j = 0; j < 3; j++) {
+            for (var h = 0; h < 3; h++) {
+                var cube = new Mesh(cubeGeometry, cubeMaterial);
+                cube.castShadow = true;
+                cube.receiveShadow = true;
+                cube.position = new Vector3(-1 + h, 4 + j, -1 + i);
+                cubeMan.add(cube);
+            }
+        }
     }
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
