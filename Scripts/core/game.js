@@ -104,7 +104,7 @@ function init() {
         cubeMan.remove(cubes[i]);
     }
     for (var i = 98; i < 105; i++) {
-        if (i % 7 == 2 || i % 7 == 6) {
+        if (i % 7 == 1 || i % 7 == 5) {
             cubeMan.remove(cubes[i]);
         }
     }
