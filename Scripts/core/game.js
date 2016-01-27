@@ -76,7 +76,7 @@ function init() {
                 cubes[(i * 50) + (j * 5) + h].position.x = -2 + h * 1.1;
                 cubes[(i * 50) + (j * 5) + h].position.y = 1 + j * 1.1;
                 cubes[(i * 50) + (j * 5) + h].position.z = -4 + i * 1.1;
-                cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
+                cubeMan.add(cubes[(i * 50) + (j * 5) + h]);
             }
         }
     }
