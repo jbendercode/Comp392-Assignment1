@@ -53,7 +53,7 @@ function init() {
     scene.add(axes);
     console.log("Added Axis Helper to scene..."); */
     //Add a Plane to the Scene
-    plane = new gameObject(new PlaneGeometry(20, 20, 1, 1), new LambertMaterial({ color: 0xC0DEF4 }), 0, 0, 0);
+    plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ color: 0xC0DEF4 }), 0, 0, 0);
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
@@ -68,13 +68,13 @@ function init() {
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 5; i++) {
-        for (var j = 0; j < 5; j++) {
+        for (var j = 0; j < 10; j++) {
             for (var h = 0; h < 5; h++) {
                 cubes[(i * 9) + (j * 3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i * 9) + (j * 3) + h].castShadow = true;
                 cubes[(i * 9) + (j * 3) + h].receiveShadow = true;
                 cubes[(i * 9) + (j * 3) + h].position.x = -2 + h * 1.05;
-                cubes[(i * 9) + (j * 3) + h].position.y = 10 + j * 1.05;
+                cubes[(i * 9) + (j * 3) + h].position.y = 1 + j * 1.05;
                 cubes[(i * 9) + (j * 3) + h].position.z = -4 + i * 1.05;
                 cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
             }
