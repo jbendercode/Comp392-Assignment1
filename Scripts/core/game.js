@@ -151,7 +151,7 @@ function init() {
             cubeMan.remove(cubes[i]);
         }
     }
-    for (var i = 329; i < 350; i++) {
+    for (var i = 308; i < 350; i++) {
         if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
             cubeMan.remove(cubes[i]);
         }
