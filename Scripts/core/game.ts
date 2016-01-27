@@ -121,7 +121,7 @@ function init() {
     
     // 2nd Layer
     for (var i = 0; i < 7; i++){
-        if (i != 2 || i != 4){
+        if (i != 2 && i != 4){
             cubeMan.remove(cubes[i + 70]);
         }
     }
