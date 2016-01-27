@@ -62,7 +62,7 @@ function init() {
     
     //Add a Plane to the Scene
     plane = new gameObject(
-        new PlaneGeometry(16, 16, 1, 1),
+        new PlaneGeometry(24, 24, 1, 1),
         new LambertMaterial({ color: 0x708EA4 }),
         0, 0, 0);
 
@@ -73,7 +73,7 @@ function init() {
     
     //Add a Cube to the Scene
     cubeMaterial = new LambertMaterial({color:0x486D88});
-    cubeGeometry = new CubeGeometry(2, 2, 2);
+    cubeGeometry = new CubeGeometry(1, 1, 1);
     cube = new Mesh(cubeGeometry, cubeMaterial);
     cube.castShadow = true;
     cube.receiveShadow = true;
@@ -84,12 +84,12 @@ function init() {
     
     
     // Add an AmbientLight to the scene
-    ambientLight = new AmbientLight(0x090909);
+    ambientLight = new AmbientLight(0x343434);
     scene.add(ambientLight);
     console.log("Added an Ambient Light to Scene");
 	
     // Add a SpotLight to the scene
-    spotLight = new SpotLight(0xaaaaaa);
+    spotLight = new SpotLight(0xFFFFFF);
     spotLight.position.set(5.6, 23.1, 5.4);
     spotLight.rotation.set(-0.8, 42.7, 19.5);
     spotLight.castShadow = true;
