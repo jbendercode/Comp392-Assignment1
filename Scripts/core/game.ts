@@ -93,9 +93,9 @@ function init() {
                 cubes[(i*9) + (j*3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i*9) + (j*3) + h].castShadow = true;
                 cubes[(i*9) + (j*3) + h].receiveShadow = true;
-                cubes[(i*9) + (j*3) + h].position.x = -2 + h * 1.05;
-                cubes[(i*9) + (j*3) + h].position.y = 1 + j * 1.05;
-                cubes[(i*9) + (j*3) + h].position.z = -4 + i * 1.05;
+                cubes[(i*9) + (j*3) + h].position.x = -2 + h * 1.1;
+                cubes[(i*9) + (j*3) + h].position.y = 1 + j * 1.1;
+                cubes[(i*9) + (j*3) + h].position.z = -4 + i * 1.1;
                 cubeMan.add(cubes[(i*9) + (j*3) + h]);
             }
         }
@@ -173,9 +173,9 @@ function setupRenderer(): void {
 // Setup main camera for the scene
 function setupCamera(): void {
     camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.x = 0.6;
-    camera.position.y = 32;
-    camera.position.z = -40.5;
+    camera.position.x = 3;
+    camera.position.y = 26;
+    camera.position.z = -30.5;
     camera.lookAt(new Vector3(0, 0, 0));
     console.log("Finished setting up Camera...");
 }
