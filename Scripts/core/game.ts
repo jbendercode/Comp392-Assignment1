@@ -55,6 +55,8 @@ function init() {
     setupRenderer(); // setup the default renderer
 	
     setupCamera(); // setup the camera
+    
+    cubes = []; // Initialize the array to hold the cubes
 	
     // add an axis helper to the scene
     axes = new AxisHelper(10);
