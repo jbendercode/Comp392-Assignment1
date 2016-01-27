@@ -62,8 +62,8 @@ function init() {
     
     //Add a Plane to the Scene
     plane = new gameObject(
-        new PlaneGeometry(24, 24, 1, 1),
-        new LambertMaterial({ color: 0x708EA4 }),
+        new PlaneGeometry(20, 20, 1, 1),
+        new LambertMaterial({ color: 0xC0DEF4 }),
         0, 0, 0);
 
     plane.rotation.x = -0.5 * Math.PI;
@@ -73,7 +73,7 @@ function init() {
     
     //Add a Cube to the Scene
     cubeMaterial = new LambertMaterial({color:0x486D88});
-    cubeGeometry = new CubeGeometry(1, 1, 1);
+    cubeGeometry = new CubeGeometry(2, 2, 2);
     cube = new Mesh(cubeGeometry, cubeMaterial);
     cube.castShadow = true;
     cube.receiveShadow = true;
