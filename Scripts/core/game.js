@@ -49,9 +49,9 @@ function init() {
     setupCamera(); // setup the camera
     cubes = []; // Initialize the array to hold the cubes
     // add an axis helper to the scene
-    axes = new AxisHelper(10);
+    /* axes = new AxisHelper(10);
     scene.add(axes);
-    console.log("Added Axis Helper to scene...");
+    console.log("Added Axis Helper to scene..."); */
     //Add a Plane to the Scene
     plane = new gameObject(new PlaneGeometry(20, 20, 1, 1), new LambertMaterial({ color: 0xC0DEF4 }), 0, 0, 0);
     plane.rotation.x = -0.5 * Math.PI;
@@ -64,7 +64,7 @@ function init() {
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ color: 0x486D88 });
+    cubeMaterial = new LambertMaterial({ color: 0x789DA8 });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 3; i++) {
@@ -73,9 +73,9 @@ function init() {
                 cubes[(i * 9) + (j * 3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i * 9) + (j * 3) + h].castShadow = true;
                 cubes[(i * 9) + (j * 3) + h].receiveShadow = true;
-                cubes[(i * 9) + (j * 3) + h].position.x = -1 + h * 1.2;
-                cubes[(i * 9) + (j * 3) + h].position.y = 5 + j * 1.2;
-                cubes[(i * 9) + (j * 3) + h].position.z = -1 + i * 1.2;
+                cubes[(i * 9) + (j * 3) + h].position.x = -5 + h * 1.05;
+                cubes[(i * 9) + (j * 3) + h].position.y = 5 + j * 1.05;
+                cubes[(i * 9) + (j * 3) + h].position.z = -1 + i * 1.05;
                 cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
             }
         }
