@@ -140,7 +140,7 @@ function init() {
             cubeMan.remove(cubes[i]);
         }
     }
-    for (var i = 259; i < 280; i++) {
+    for (var i = 238; i < 280; i++) {
         if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
             cubeMan.remove(cubes[i]);
         }
@@ -213,9 +213,9 @@ function setupRenderer() {
 // Setup main camera for the scene
 function setupCamera() {
     camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.x = 3;
-    camera.position.y = 26;
-    camera.position.z = -27.5;
-    camera.lookAt(new Vector3(0, 0, 0));
+    camera.position.x = 5;
+    camera.position.y = 22;
+    camera.position.z = -32;
+    camera.lookAt(new Vector3(0, 5, 0));
     console.log("Finished setting up Camera...");
 }
