@@ -67,14 +67,14 @@ function init() {
     cubeMaterial = new LambertMaterial({ color: 0x7887AB });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
-    for (var i = 0; i < 3; i++) {
-        for (var j = 0; j < 3; j++) {
-            for (var h = 0; h < 3; h++) {
+    for (var i = 0; i < 5; i++) {
+        for (var j = 0; j < 5; j++) {
+            for (var h = 0; h < 5; h++) {
                 cubes[(i * 9) + (j * 3) + h] = new Mesh(cubeGeometry, cubeMaterial);
                 cubes[(i * 9) + (j * 3) + h].castShadow = true;
                 cubes[(i * 9) + (j * 3) + h].receiveShadow = true;
                 cubes[(i * 9) + (j * 3) + h].position.x = -1 + h * 1.05;
-                cubes[(i * 9) + (j * 3) + h].position.y = 5 + j * 1.05;
+                cubes[(i * 9) + (j * 3) + h].position.y = 10 + j * 1.05;
                 cubes[(i * 9) + (j * 3) + h].position.z = -5 + i * 1.05;
                 cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
             }
