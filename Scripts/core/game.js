@@ -69,23 +69,23 @@ function init() {
     //Add Cubes to the Cube Man
     for (var i = 0; i < 5; i++) {
         for (var j = 0; j < 10; j++) {
-            for (var h = 0; h < 5; h++) {
-                cubes[(i * 50) + (j * 5) + h] = new Mesh(cubeGeometry, cubeMaterial);
-                cubes[(i * 50) + (j * 5) + h].castShadow = true;
-                cubes[(i * 50) + (j * 5) + h].receiveShadow = true;
-                cubes[(i * 50) + (j * 5) + h].position.x = -2 + h * 1.1;
-                cubes[(i * 50) + (j * 5) + h].position.y = 1 + j * 1.1;
-                cubes[(i * 50) + (j * 5) + h].position.z = -4 + i * 1.1;
-                cubeMan.add(cubes[(i * 50) + (j * 5) + h]);
+            for (var h = 0; h < 7; h++) {
+                cubes[(i * 70) + (j * 7) + h] = new Mesh(cubeGeometry, cubeMaterial);
+                cubes[(i * 70) + (j * 7) + h].castShadow = true;
+                cubes[(i * 70) + (j * 7) + h].receiveShadow = true;
+                cubes[(i * 70) + (j * 7) + h].position.x = -4 + h * 1.1;
+                cubes[(i * 70) + (j * 7) + h].position.y = 1 + j * 1.1;
+                cubes[(i * 70) + (j * 7) + h].position.z = -4 + i * 1.1;
+                cubeMan.add(cubes[(i * 70) + (j * 7) + h]);
             }
         }
     }
     // Remove Uneeded Cubes from the array
     // 1st Layer
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 28; i++) {
         cubeMan.remove(cubes[i]);
     }
-    for (var i = 35; i < 50; i++) {
+    for (var i = 49; i < 70; i++) {
         cubeMan.remove(cubes[i]);
     }
     // Add an AmbientLight to the scene
