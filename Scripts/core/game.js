@@ -41,11 +41,13 @@ var step = 0;
 var cubeGeometry;
 var cubeMaterial;
 var cubeMan;
+var cubes;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
     setupRenderer(); // setup the default renderer
     setupCamera(); // setup the camera
+    cubes = new Mesh[100]; // initialize the cubes array with a size
     // add an axis helper to the scene
     axes = new AxisHelper(10);
     scene.add(axes);
@@ -65,11 +67,11 @@ function init() {
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             for (var h = 0; h < 3; h++) {
-                var cube = new Mesh(cubeGeometry, cubeMaterial);
-                cube.castShadow = true;
-                cube.receiveShadow = true;
-                cube.position = new Vector3(-1 + h, 4 + j, -1 + i);
-                cubeMan.add(cube);
+                cubes[(i * 9) + (j * 3) + h] = new Mesh(cubeGeometry, cubeMaterial);
+                cubes[(i * 9) + (j * 3) + h].castShadow = true;
+                cubes[(i * 9) + (j * 3) + h].receiveShadow = true;
+                cubes[(i * 9) + (j * 3) + h].position = new Vector3(-1 + h, 4 + j, -1 + i);
+                cubeMan.add(cubes[(i * 9) + (j * 3) + h]);
             }
         }
     }
