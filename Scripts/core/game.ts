@@ -63,7 +63,7 @@ function init() {
     //Add a Plane to the Scene
     plane = new gameObject(
         new PlaneGeometry(16, 16, 1, 1),
-        new LambertMaterial({ color: 0xAAEEFF }),
+        new LambertMaterial({ color: 0x708EA4 }),
         0, 0, 0);
 
     plane.rotation.x = -0.5 * Math.PI;
@@ -72,7 +72,7 @@ function init() {
     console.log("Added Plane Primitive to scene...");
     
     //Add a Cube to the Scene
-    cubeMaterial = new LambertMaterial({color:0x00ff00});
+    cubeMaterial = new LambertMaterial({color:0x486D88});
     cubeGeometry = new CubeGeometry(2, 2, 2);
     cube = new Mesh(cubeGeometry, cubeMaterial);
     cube.castShadow = true;
