@@ -131,7 +131,7 @@ function init() {
     }
     
     for (var i = 98; i < 105; i++){
-        if (i%7 == 2 && i%7 == 6){
+        if (i%7 == 2 || i%7 == 6){
             cubeMan.remove(cubes[i]);
         }
     }
@@ -142,8 +142,10 @@ function init() {
         }
     }
     
-    for (var i = 119; i < 126; i++){
-       cubeMan.remove(cubes[i]);
+    for (var i = 119; i < 140; i++){
+        if (i%7 != 2 && i%7 != 3 && i%7 != 4){
+            cubeMan.remove(cubes[i]);
+        }
     }
     
     // 3rd Layer
