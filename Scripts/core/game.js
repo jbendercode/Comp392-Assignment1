@@ -136,14 +136,15 @@ function init() {
     }
     // Layer 4
     for (var i = 210; i < 238; i++) {
-        if (i % 7 != 2 && i % 7 != 4) {
-            cubeMan.remove(cubes[i]);
-        }
+        cubeMan.remove(cubes[i]);
     }
     for (var i = 238; i < 280; i++) {
         if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
             cubeMan.remove(cubes[i]);
         }
+    }
+    for (var i = 259; i < 286; i++) {
+        cubeMan.remove(cubes[i]);
     }
     // Layer 5
     for (var i = 280; i < 308; i++) {
@@ -155,6 +156,9 @@ function init() {
         if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
             cubeMan.remove(cubes[i]);
         }
+    }
+    for (var i = 329; i < 336; i++) {
+        cubeMan.remove(cubes[i]);
     }
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
