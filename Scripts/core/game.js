@@ -82,7 +82,10 @@ function init() {
     }
     // Remove Uneeded Cubes from the array
     // 1st Layer
-    for (var i = 200; i < 249; i++) {
+    for (var i = 0; i < 20; i++) {
+        cubeMan.remove(cubes[i]);
+    }
+    for (var i = 35; i < 50; i++) {
         cubeMan.remove(cubes[i]);
     }
     // Add an AmbientLight to the scene
