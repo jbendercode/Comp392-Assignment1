@@ -155,6 +155,12 @@ function init() {
         }
     }
     
+    for (var i = 168; i < 182; i++){
+        if (i%7 == 1 || i%7 == 5){
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    
     for (var i = 189; i < 210; i++){
         if (i%7 != 2 && i%7 != 3 && i%7 != 4){
             cubeMan.remove(cubes[i]);
