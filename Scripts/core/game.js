@@ -109,14 +109,8 @@ function init() {
     // 3rd Layer
     for (var i = 140; i < 168; i++) {
         if (i % 7 != 2 && i % 7 != 4) {
-            cubeMan.remove(cubes[i + 140]);
+            cubeMan.remove(cubes[i]);
         }
-    }
-    for (var i = 77; i < 98; i++) {
-        cubeMan.remove(cubes[i]);
-    }
-    for (var i = 119; i < 126; i++) {
-        cubeMan.remove(cubes[i]);
     }
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
