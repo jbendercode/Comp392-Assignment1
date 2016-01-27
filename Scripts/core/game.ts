@@ -167,6 +167,19 @@ function init() {
         }
     }
     
+    // Layer 4
+    for (var i = 210; i < 238; i++){
+        if (i%7 != 2 && i%7 != 4){
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    
+    // Layer 5
+    for (var i = 280; i < 308; i++){
+        if (i%7 != 2 && i%7 != 4){
+            cubeMan.remove(cubes[i]);
+        }
+    }
 
     
     

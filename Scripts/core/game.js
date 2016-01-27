@@ -134,6 +134,18 @@ function init() {
             cubeMan.remove(cubes[i]);
         }
     }
+    // Layer 4
+    for (var i = 210; i < 238; i++) {
+        if (i % 7 != 2 && i % 7 != 4) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    // Layer 5
+    for (var i = 280; i < 308; i++) {
+        if (i % 7 != 2 && i % 7 != 4) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
     scene.add(ambientLight);
