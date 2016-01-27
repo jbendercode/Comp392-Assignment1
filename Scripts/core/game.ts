@@ -105,7 +105,7 @@ function init() {
     
     // 1st Layer
     for (var i = 200; i < 249; i++){
-        delete cubes[i];
+       cubeMan.remove(cubes[i]);
     }
     
     
