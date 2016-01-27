@@ -141,6 +141,18 @@ function init() {
         }
     }
     
+    for (var i = 168; i < 175; i++){
+        if (i%7 == 2 && i%7 == 6){
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    
+        for (var i = 175; i < 189; i++){
+        if (i%7 != 2 && i%7 != 3 && i%7 != 4){
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    
     
     
     // Add an AmbientLight to the scene
