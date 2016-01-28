@@ -59,9 +59,9 @@ function init() {
     cubes = []; // Initialize the array to hold the cubes
 	
     // add an axis helper to the scene
-    /* axes = new AxisHelper(10);
+    axes = new AxisHelper(10);
     scene.add(axes);
-    console.log("Added Axis Helper to scene..."); */
+    console.log("Added Axis Helper to scene..."); 
     
     //Add a Plane to the Scene
     plane = new gameObject(

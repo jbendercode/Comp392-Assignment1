@@ -49,9 +49,9 @@ function init() {
     setupCamera(); // setup the camera
     cubes = []; // Initialize the array to hold the cubes
     // add an axis helper to the scene
-    /* axes = new AxisHelper(10);
+    axes = new AxisHelper(10);
     scene.add(axes);
-    console.log("Added Axis Helper to scene..."); */
+    console.log("Added Axis Helper to scene...");
     //Add a Plane to the Scene
     plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ color: 0xC0DEF4 }), 0, 0, 0);
     plane.rotation.x = -0.5 * Math.PI;
