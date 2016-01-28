@@ -199,6 +199,8 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
     // render the scene
     renderer.render(scene, camera);
+    // rotate cubeMan
+    cubeMan.rotation.y += 0.1;
 }
 // Setup default renderer
 function setupRenderer() {
