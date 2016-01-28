@@ -78,7 +78,7 @@ function init() {
     
     // Start with creating an empty group
     cubeMan = new Object3D();
-    cubeMan.position.set(0, 1, 0);
+    cubeMan.position.set(0, 1, -2);
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
 
@@ -87,7 +87,7 @@ function init() {
     cubeGeometry = new CubeGeometry(1, 1, 1);
     
     //Add Cubes to the Cube Man
-    for (var i = 0; i < 5; i++){
+    for (var i = 0; i < 4; i++){
         for (var j = 0; j < 10; j++){
             for (var h = 0; h < 7; h++){
                 cubes[(i*70) + (j*7) + h] = new Mesh(cubeGeometry, cubeMaterial);
@@ -176,21 +176,6 @@ function init() {
         if (i%7 != 2 && i%7 != 3 && i%7 != 4){
             cubeMan.remove(cubes[i]);
         }
-    }
-    
-    // Layer 5
-    for (var i = 280; i < 308; i++){
-        cubeMan.remove(cubes[i]);
-    }
-    
-    for (var i = 308; i < 329; i++){
-        if (i%7 != 2 && i%7 != 3 && i%7 != 4){
-            cubeMan.remove(cubes[i]);
-        }
-    }
-    
-    for (var i = 308; i < 350; i++){
-        cubeMan.remove(cubes[i]);
     }
     
     // Add an AmbientLight to the scene
