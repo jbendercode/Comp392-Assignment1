@@ -213,7 +213,7 @@ function onResize(): void {
 }
 
 function addControl(controlObject: Control): void {
-    //gui.add(controlObject, 'clone');
+    gui.add(controlObject, 'rotationSpeed');
 
 }
 
