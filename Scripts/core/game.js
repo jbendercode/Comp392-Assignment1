@@ -86,6 +86,7 @@ function init() {
     cubes[0].position.x = 0;
     cubes[0].position.y = 0;
     cubes[0].position.z = 0;
+    cubeMan.add(cubes[0]);
     // Remove Uneeded Cubes from the array
     /*
     // 1st Layer
