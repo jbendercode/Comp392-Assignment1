@@ -193,7 +193,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control();
+    control = new Control(0.01);
     addControl(control);
 
     // Add framerate stats

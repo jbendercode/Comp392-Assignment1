@@ -156,7 +156,7 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control();
+    control = new Control(0.01);
     addControl(control);
     // Add framerate stats
     addStatsObject();
