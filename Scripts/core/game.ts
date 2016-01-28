@@ -87,7 +87,7 @@ function init() {
     cubeGeometry = new CubeGeometry(1, 1, 1);
     
     //Add Cubes to the Cube Man
-    for (var i = 0; i < 4; i++){
+    /* for (var i = 0; i < 4; i++){
         for (var j = 0; j < 10; j++){
             for (var h = 0; h < 7; h++){
                 cubes[(i*70) + (j*7) + h] = new Mesh(cubeGeometry, cubeMaterial);
@@ -99,10 +99,17 @@ function init() {
                 cubeMan.add(cubes[(i*70) + (j*7) + h]);
             }
         }
-    }
+    } */
+    
+    cubes[0] = new Mesh(cubeGeometry, cubeMaterial);
+    cubes[0].castShadow = true;
+    cubes[0].receiveShadow = true;
+    cubes[0].position.x = 0;
+    cubes[0].position.y = 0;
+    cubes[0].position.z = 0;
     
     // Remove Uneeded Cubes from the array
-    
+    /*
     // 1st Layer
     for (var i = 0; i < 28; i++){
        cubeMan.remove(cubes[i]);
@@ -176,7 +183,7 @@ function init() {
         if (i%7 != 2 && i%7 != 3 && i%7 != 4){
             cubeMan.remove(cubes[i]);
         }
-    }
+    }*/
     
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
