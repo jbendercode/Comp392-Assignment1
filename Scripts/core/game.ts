@@ -237,7 +237,7 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    cubeMan.rotation.y += control.rotationSpeed;
+    cubeMan.rotateOnAxis(new Vector3(0, 0, 0), control.rotationSpeed);
 }
 
 // Setup default renderer
