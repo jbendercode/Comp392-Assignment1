@@ -67,102 +67,82 @@ function init() {
     cubeMaterial = new LambertMaterial({ color: 0x7887AB });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
-    /* for (var i = 0; i < 4; i++){
-        for (var j = 0; j < 10; j++){
-            for (var h = 0; h < 7; h++){
-                cubes[(i*70) + (j*7) + h] = new Mesh(cubeGeometry, cubeMaterial);
-                cubes[(i*70) + (j*7) + h].castShadow = true;
-                cubes[(i*70) + (j*7) + h].receiveShadow = true;
-                cubes[(i*70) + (j*7) + h].position.x = -3 + h * 1.1;
-                cubes[(i*70) + (j*7) + h].position.y = 1 + j * 1.1;
-                cubes[(i*70) + (j*7) + h].position.z = -4 + i * 1.1;
-                cubeMan.add(cubes[(i*70) + (j*7) + h]);
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < 10; j++) {
+            for (var h = 0; h < 7; h++) {
+                cubes[(i * 70) + (j * 7) + h] = new Mesh(cubeGeometry, cubeMaterial);
+                cubes[(i * 70) + (j * 7) + h].castShadow = true;
+                cubes[(i * 70) + (j * 7) + h].receiveShadow = true;
+                cubes[(i * 70) + (j * 7) + h].position.x = -3.8 + h * 1.1;
+                cubes[(i * 70) + (j * 7) + h].position.y = 1 + j * 1.1;
+                cubes[(i * 70) + (j * 7) + h].position.z = -2.15 + i * 1.1;
+                cubeMan.add(cubes[(i * 70) + (j * 7) + h]);
             }
         }
-    } */
-    cubes[0] = new Mesh(cubeGeometry, cubeMaterial);
-    cubes[0].castShadow = true;
-    cubes[0].receiveShadow = true;
-    cubes[0].position.x = 0;
-    cubes[0].position.y = 0;
-    cubes[0].position.z = 0;
-    cubeMan.add(cubes[0]);
+    }
     // Remove Uneeded Cubes from the array
-    /*
     // 1st Layer
-    for (var i = 0; i < 28; i++){
-       cubeMan.remove(cubes[i]);
+    for (var i = 0; i < 28; i++) {
+        cubeMan.remove(cubes[i]);
     }
-    
-    for (var i = 49; i < 70; i++){
-       cubeMan.remove(cubes[i]);
+    for (var i = 49; i < 70; i++) {
+        cubeMan.remove(cubes[i]);
     }
-    
-    for (var i = 0; i < 3; i++){
-        cubeMan.remove(cubes[28 + (i*7)]);
-        cubeMan.remove(cubes[29 + (i*7)]);
-        cubeMan.remove(cubes[33 + (i*7)]);
-        cubeMan.remove(cubes[34 + (i*7)]);
+    for (var i = 0; i < 3; i++) {
+        cubeMan.remove(cubes[28 + (i * 7)]);
+        cubeMan.remove(cubes[29 + (i * 7)]);
+        cubeMan.remove(cubes[33 + (i * 7)]);
+        cubeMan.remove(cubes[34 + (i * 7)]);
     }
-    
     // 2nd Layer
-    for (var i = 0; i < 7; i++){
-        if (i != 2 && i != 4){
+    for (var i = 0; i < 7; i++) {
+        if (i != 2 && i != 4) {
             cubeMan.remove(cubes[i + 70]);
         }
     }
-    
-    for (var i = 77; i < 98; i++){
-       cubeMan.remove(cubes[i]);
-    }
-    
-    for (var i = 98; i < 105; i++){
-        if (i%7 == 1 || i%7 == 5){
-            cubeMan.remove(cubes[i]);
-        }
-    }
-    
-    for (var i = 105; i < 119; i++){
-        if (i%7 != 2 && i%7 != 3 && i%7 != 4){
-            cubeMan.remove(cubes[i]);
-        }
-    }
-    
-    for (var i = 119; i < 140; i++){
-        if (i%7 != 2 && i%7 != 3 && i%7 != 4){
-            cubeMan.remove(cubes[i]);
-        }
-    }
-    
-    // 3rd Layer
-    for (var i = 140; i < 168; i++){
-        if (i%7 != 2 && i%7 != 4){
-            cubeMan.remove(cubes[i]);
-        }
-    }
-    
-    for (var i = 168; i < 182; i++){
-        if (i%7 == 1 || i%7 == 5){
-            cubeMan.remove(cubes[i]);
-        }
-    }
-    
-    for (var i = 189; i < 210; i++){
-        if (i%7 != 2 && i%7 != 3 && i%7 != 4){
-            cubeMan.remove(cubes[i]);
-        }
-    }
-    
-    // Layer 4
-    for (var i = 210; i < 238; i++){
+    for (var i = 77; i < 98; i++) {
         cubeMan.remove(cubes[i]);
     }
-    
-    for (var i = 238; i < 280; i++){
-        if (i%7 != 2 && i%7 != 3 && i%7 != 4){
+    for (var i = 98; i < 105; i++) {
+        if (i % 7 == 1 || i % 7 == 5) {
             cubeMan.remove(cubes[i]);
         }
-    }*/
+    }
+    for (var i = 105; i < 119; i++) {
+        if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    for (var i = 119; i < 140; i++) {
+        if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    // 3rd Layer
+    for (var i = 140; i < 168; i++) {
+        if (i % 7 != 2 && i % 7 != 4) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    for (var i = 168; i < 182; i++) {
+        if (i % 7 == 1 || i % 7 == 5) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    for (var i = 189; i < 210; i++) {
+        if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
+    // Layer 4
+    for (var i = 210; i < 238; i++) {
+        cubeMan.remove(cubes[i]);
+    }
+    for (var i = 238; i < 280; i++) {
+        if (i % 7 != 2 && i % 7 != 3 && i % 7 != 4) {
+            cubeMan.remove(cubes[i]);
+        }
+    }
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x949494);
     scene.add(ambientLight);
