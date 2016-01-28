@@ -42,6 +42,7 @@ var control: Control;
 var gui: GUI;
 var stats: Stats;
 var step: number = 0;
+var rad: number;
 var cubeGeometry:CubeGeometry;
 var cubeMaterial:LambertMaterial;
 var cubeMan: Object3D;
@@ -237,7 +238,8 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    cubeMan.rotateOnAxis(new Vector3(0, 0, 0), control.rotationSpeed);
+    rad += control.rotationSpeed
+    cubeMan.rotateOnAxis(new Vector3(0, 0, 0), rad);
 }
 
 // Setup default renderer
