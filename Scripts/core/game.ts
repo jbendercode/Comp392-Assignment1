@@ -238,7 +238,7 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    rad += control.rotationSpeed
+    rad += control.rotationSpeed;
     cubeMan.rotateOnAxis(new Vector3(0, 0, 0), rad);
 }
 
