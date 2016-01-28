@@ -213,7 +213,7 @@ function onResize(): void {
 }
 
 function addControl(controlObject: Control): void {
-    gui.add(controlObject, 'rotationSpeed');
+    gui.add(controlObject, 'Rotation Speed');
 
 }
 
@@ -237,7 +237,7 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    cubeMan.rotation.y += 1 / 100;
+    cubeMan.rotation.y += control.rotationSpeed;
 }
 
 // Setup default renderer
