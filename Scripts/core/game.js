@@ -42,6 +42,7 @@ var cubeGeometry;
 var cubeMaterial;
 var cubeMan;
 var cubes;
+var cubeTexture;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
@@ -63,8 +64,10 @@ function init() {
     cubeMan.position.set(0, 0, 0);
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
+    // Set Texture
+    cubeTexture = THREE.ImageUtils.loadTexture('crate.gif');
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ color: 0x7887AB });
+    cubeMaterial = new LambertMaterial({ map: THREE.ImageUtils.loadTexture("crate.gif") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 4; i++) {
