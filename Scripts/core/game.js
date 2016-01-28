@@ -38,19 +38,16 @@ var control;
 var gui;
 var stats;
 var step = 0;
-var rad;
 var cubeGeometry;
 var cubeMaterial;
 var cubeMan;
 var cubes;
-var axis;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
     setupRenderer(); // setup the default renderer
     setupCamera(); // setup the camera
     cubes = []; // Initialize the array to hold the cubes
-    axis = new Vector3(0, 1, 0);
     // add an axis helper to the scene
     axes = new AxisHelper(10);
     scene.add(axes);
@@ -192,8 +189,7 @@ function gameLoop() {
     // render the scene
     renderer.render(scene, camera);
     // rotate cubeMan
-    rad += control.rotationSpeed;
-    cubeMan.rotateOnAxis(axis, rad);
+    cubeMan.rotation.y += control.rotationSpeed;
 }
 // Setup default renderer
 function setupRenderer() {

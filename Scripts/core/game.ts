@@ -42,12 +42,10 @@ var control: Control;
 var gui: GUI;
 var stats: Stats;
 var step: number = 0;
-var rad: number;
 var cubeGeometry:CubeGeometry;
 var cubeMaterial:LambertMaterial;
 var cubeMan: Object3D;
 var cubes: Mesh[];
-var axis: Vector3;
 
 
 function init() {
@@ -59,8 +57,6 @@ function init() {
     setupCamera(); // setup the camera
     
     cubes = []; // Initialize the array to hold the cubes
-    
-    axis = new Vector3(0, 1, 0);
 	
     // add an axis helper to the scene
     axes = new AxisHelper(10);
@@ -241,8 +237,7 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    rad += control.rotationSpeed;
-    cubeMan.rotateOnAxis(axis, rad);
+    cubeMan.rotation.y += control.rotationSpeed;
 }
 
 // Setup default renderer
