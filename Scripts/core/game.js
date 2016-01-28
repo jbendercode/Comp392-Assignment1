@@ -60,7 +60,7 @@ function init() {
     // Create Cube Man
     // Start with creating an empty group
     cubeMan = new Object3D();
-    cubeMan.position.set(0, 1, -2);
+    cubeMan.position.set(0, 1, 0);
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
     // Set Mat and Geometry to use for cubes
