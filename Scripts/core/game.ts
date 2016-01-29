@@ -265,13 +265,15 @@ function gameLoop(): void {
         }
     }
     
-    if (cubes[98].position.z < 2 && punch == true){
+    if (cubes[98].position.z < 3 && punch == true){
         cubes[98].position.z += control.superPunchSpeed;
+        cubes[104].position.z -= control.superPunchSpeed;
     } 
-    else if (cubes[98].position.z > -2 && punch == false){
+    else if (cubes[98].position.z > 1.1 && punch == false){
         cubes[98].position.z -= control.superPunchSpeed;
+        cubes[104].position.z -= control.superPunchSpeed;
     }
-    else if (cubes[98].position.z >= -2 && punch == true){
+    else if (cubes[98].position.z >= 1.1 && punch == true){
         punch = false;
     }
     else {
