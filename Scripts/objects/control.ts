@@ -5,11 +5,11 @@ module objects {
     export class Control { 
         //PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++
         public rotationSpeed:number;
-        public superPunchSpeed:number;
+        public punchSpeed:number;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(rotationSpeed:number, superPunchSpeed:number) {
+        constructor(rotationSpeed:number, punchSpeed:number) {
             this.rotationSpeed = rotationSpeed;
-            this.superPunchSpeed = superPunchSpeed;
+            this.punchSpeed = punchSpeed;
         }
         
     }

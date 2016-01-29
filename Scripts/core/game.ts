@@ -220,7 +220,7 @@ function onResize(): void {
 
 function addControl(controlObject: Control): void {
     gui.add(controlObject, 'rotationSpeed', -0.2, 0.2);
-    gui.add(controlObject, 'superPunchSpeed', 0, 0.2);
+    gui.add(controlObject, 'punchSpeed', 0, 0.2);
 
 }
 
@@ -266,12 +266,12 @@ function gameLoop(): void {
     }
     
     if (cubes[98].position.z < -0.6 && punch == true){
-        cubes[98].position.z += control.superPunchSpeed;
-        cubes[104].position.z += control.superPunchSpeed;
+        cubes[98].position.z += control.punchSpeed;
+        cubes[104].position.z += control.punchSpeed;
     } 
     else if (cubes[98].position.z > -2 && punch == false){
-        cubes[98].position.z -= control.superPunchSpeed;
-        cubes[104].position.z -= control.superPunchSpeed;
+        cubes[98].position.z -= control.punchSpeed;
+        cubes[104].position.z -= control.punchSpeed;
     }
     else if (cubes[98].position.z >= -2 && punch == true){
         punch = false;
