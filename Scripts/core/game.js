@@ -42,7 +42,6 @@ var cubeGeometry;
 var cubeMaterial;
 var cubeMan;
 var cubes;
-var cubeTexture;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
@@ -54,7 +53,7 @@ function init() {
     scene.add(axes);
     console.log("Added Axis Helper to scene...");
     //Add a Plane to the Scene
-    plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/iceTexture2.jpg") }), 0, 0, 0);
+    plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/iceTexture.jpg") }), 0, 0, 0);
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
@@ -64,10 +63,8 @@ function init() {
     cubeMan.position.set(0, 0, 0);
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
-    // Set Texture
-    cubeTexture = THREE.ImageUtils.loadTexture('crate.gif');
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/icyTexture.jpg") });
+    cubeMaterial = new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 4; i++) {
