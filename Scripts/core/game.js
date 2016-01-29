@@ -216,10 +216,16 @@ function gameLoop() {
     }
     if (cubes[98].position.z < -0.6 && punch == true) {
         cubes[98].position.z += control.punchSpeed;
+        cubes[98].scale.x += control.punchSpeed;
+        cubes[98].scale.y += control.punchSpeed;
+        cubes[98].scale.z += control.punchSpeed;
         cubes[104].position.z += control.punchSpeed;
     }
     else if (cubes[98].position.z > -2 && punch == false) {
         cubes[98].position.z -= control.punchSpeed;
+        cubes[98].scale.x -= control.punchSpeed;
+        cubes[98].scale.y -= control.punchSpeed;
+        cubes[98].scale.z -= control.punchSpeed;
         cubes[104].position.z -= control.punchSpeed;
     }
     else if (cubes[98].position.z >= -2 && punch == true) {
