@@ -261,6 +261,8 @@ function gameLoop(): void {
             growth = true;
         }
     }
+    
+    cubes[31].scale.z -= 0.0001;
 }
 
 // Setup default renderer
