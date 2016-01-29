@@ -197,7 +197,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control(0.01);
+    control = new Control(0.01, 0.00);
     addControl(control);
 
     // Add framerate stats
@@ -218,6 +218,7 @@ function onResize(): void {
 
 function addControl(controlObject: Control): void {
     gui.add(controlObject, 'rotationSpeed', -0.2, 0.2);
+    gui.add(controlObject, 'superPunchSpeed', 0, 0.2);
 
 }
 
@@ -260,6 +261,13 @@ function gameLoop(): void {
         else {
             growth = true;
         }
+    }
+    
+    if (cubes[98].position.y < 3){
+        cubes[98].position.z += control.superPunchSpeed;
+    } 
+    else if (cubes[98].position.y > 1){
+        cubes[98].position.z += control.superPunchSpeed;
     }
 }
 
