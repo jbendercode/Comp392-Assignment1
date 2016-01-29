@@ -67,7 +67,7 @@ function init() {
     // Set Texture
     cubeTexture = THREE.ImageUtils.loadTexture('crate.gif');
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ map: THREE.ImageUtils.loadTexture("crate.gif") });
+    cubeMaterial = new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/icyTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 4; i++) {
