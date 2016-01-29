@@ -59,7 +59,7 @@ function init() {
     cubes = []; // Initialize the array to hold the cubes
 	
     // add an axis helper to the scene
-    axes = new AxisHelper(10);
+    axes = new AxisHelper(20);
     scene.add(axes);
     console.log("Added Axis Helper to scene..."); 
     
