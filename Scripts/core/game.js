@@ -171,7 +171,7 @@ function onResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 function addControl(controlObject) {
-    gui.add(controlObject, 'rotationSpeed', -0.5, 0.5);
+    gui.add(controlObject, 'rotationSpeed', -0.2, 0.2);
 }
 function addStatsObject() {
     stats = new Stats();
