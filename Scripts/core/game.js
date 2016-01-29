@@ -196,6 +196,7 @@ function gameLoop() {
     renderer.render(scene, camera);
     // rotate cubeMan
     cubeMan.rotation.y += control.rotationSpeed;
+    // Auto scaling cubeMan animation loop
     for (var m in cubes) {
         if (cubes[m].scale.x < 1.1 && growth == true) {
             cubes[m].scale.x += 0.007;
@@ -214,18 +215,13 @@ function gameLoop() {
             growth = true;
         }
     }
+    // Punch control loop
     if (cubes[98].position.z < -0.6 && punch == true) {
         cubes[98].position.z += control.punchSpeed;
-        cubes[98].scale.x += control.punchSpeed;
-        cubes[98].scale.y += control.punchSpeed;
-        cubes[98].scale.z += control.punchSpeed;
         cubes[104].position.z += control.punchSpeed;
     }
     else if (cubes[98].position.z > -2 && punch == false) {
         cubes[98].position.z -= control.punchSpeed;
-        cubes[98].scale.x -= control.punchSpeed;
-        cubes[98].scale.y -= control.punchSpeed;
-        cubes[98].scale.z -= control.punchSpeed;
         cubes[104].position.z -= control.punchSpeed;
     }
     else if (cubes[98].position.z >= -2 && punch == true) {
