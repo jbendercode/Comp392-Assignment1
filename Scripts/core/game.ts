@@ -46,6 +46,7 @@ var cubeGeometry:CubeGeometry;
 var cubeMaterial:LambertMaterial;
 var cubeMan: Object3D;
 var cubes: Mesh[];
+var growth: Boolean;
 
 
 function init() {
@@ -73,6 +74,9 @@ function init() {
 
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
+    
+    // Set growth variable for scaling cubeMan parts to true
+    growth = true;
     
     // Create Cube Man
     
@@ -238,6 +242,25 @@ function gameLoop(): void {
     
     // rotate cubeMan
     cubeMan.rotation.y += control.rotationSpeed;
+    
+    for (var m in cubes){
+        if (m.scale.x < 1.1 && growth == true){
+            m.scale.x += 0.005;
+            m.scale.y += 0.005;
+            m.scale.z += 0.005;
+        } 
+        else if (m.scale.x > 1 && growth == false){
+            m.scale.x -= 0.005;
+            m.scale.y -= 0.005;
+            m.scale.z -= 0.005;
+        }
+        else if (m.scale.x >= 1.1 && growth == true){
+            growth = false;
+        }
+        else {
+            growth = true;
+        }
+    }
 }
 
 // Setup default renderer
