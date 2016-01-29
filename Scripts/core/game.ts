@@ -241,7 +241,7 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    cubeMan.rotation.y += control.rotationSpeed;
+    cubeMan.rotation.y += control.rotationSpeed;/*
     
     for (var m in cubes){
         if (cubes[m].scale.x < 1.1 && growth == true){
@@ -260,7 +260,7 @@ function gameLoop(): void {
         else {
             growth = true;
         }
-    }
+    }*/
     
     cubes[31].scale.z -= 0.0001;
 }
