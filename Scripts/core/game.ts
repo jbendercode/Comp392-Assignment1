@@ -178,10 +178,14 @@ function init() {
         cubeMan.remove(cubes[i]);
     }
     
-    for (var i = 238; i < 280; i++){
+    for (var i = 238; i < 259; i++){
         if (i%7 != 2 && i%7 != 3 && i%7 != 4){
             cubeMan.remove(cubes[i]);
         }
+    }
+    
+    for (var i = 259; i < 280; i++){
+        cubeMan.remove(cubes[i]);
     }
     
     // Add an AmbientLight to the scene
