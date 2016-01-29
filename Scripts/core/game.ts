@@ -67,7 +67,7 @@ function init() {
     //Add a Plane to the Scene
     plane = new gameObject(
         new PlaneGeometry(24, 24, 1, 1),
-        new LambertMaterial({ color: 0xC0DEF4 }),
+        new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/iceTexture2.jpg") }),
         0, 0, 0);
 
     plane.rotation.x = -0.5 * Math.PI;
