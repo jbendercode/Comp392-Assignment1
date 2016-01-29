@@ -262,7 +262,7 @@ function gameLoop(): void {
         }
     }*/
     
-    cubes[31].scale.z -= 0.0001;
+    cubes[31].scale.z += 0.003;
 }
 
 // Setup default renderer
