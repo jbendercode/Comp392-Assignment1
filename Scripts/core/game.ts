@@ -241,18 +241,18 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    cubeMan.rotation.y += control.rotationSpeed;/*
+    cubeMan.rotation.y += control.rotationSpeed;
     
     for (var m in cubes){
         if (cubes[m].scale.x < 1.1 && growth == true){
-            cubes[m].scale.x += 0.005;
-            cubes[m].scale.y += 0.005;
-            cubes[m].scale.z += 0.005;
+            cubes[m].scale.x += 0.007;
+            cubes[m].scale.y += 0.007;
+            cubes[m].scale.z += 0.007;
         } 
         else if (cubes[m].scale.x > 1 && growth == false){
-            cubes[m].scale.x -= 0.005;
-            cubes[m].scale.y -= 0.005;
-            cubes[m].scale.z -= 0.005;
+            cubes[m].scale.x -= 0.007;
+            cubes[m].scale.y -= 0.007;
+            cubes[m].scale.z -= 0.007;
         }
         else if (cubes[m].scale.x >= 1.1 && growth == true){
             growth = false;
@@ -260,9 +260,7 @@ function gameLoop(): void {
         else {
             growth = true;
         }
-    }*/
-    
-    cubes[31].scale.z -= 0.1;
+    }
 }
 
 // Setup default renderer
