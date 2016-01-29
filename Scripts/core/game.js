@@ -194,17 +194,17 @@ function gameLoop() {
     // rotate cubeMan
     cubeMan.rotation.y += control.rotationSpeed;
     for (var m in cubes) {
-        if (m.scale.x < 1.1 && growth == true) {
-            m.scale.x += 0.005;
-            m.scale.y += 0.005;
-            m.scale.z += 0.005;
+        if (cubes[m].scale.x < 1.1 && growth == true) {
+            cubes[m].scale.x += 0.005;
+            cubes[m].scale.y += 0.005;
+            cubes[m].scale.z += 0.005;
         }
-        else if (m.scale.x > 1 && growth == false) {
-            m.scale.x -= 0.005;
-            m.scale.y -= 0.005;
-            m.scale.z -= 0.005;
+        else if (cubes[m].scale.x > 1 && growth == false) {
+            cubes[m].scale.x -= 0.005;
+            cubes[m].scale.y -= 0.005;
+            cubes[m].scale.z -= 0.005;
         }
-        else if (m.scale.x >= 1.1 && growth == true) {
+        else if (cubes[m].scale.x >= 1.1 && growth == true) {
             growth = false;
         }
         else {
