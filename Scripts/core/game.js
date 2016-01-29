@@ -43,6 +43,7 @@ var cubeMaterial;
 var cubeMan;
 var cubes;
 var growth;
+var punch;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
@@ -58,8 +59,9 @@ function init() {
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
-    // Set growth variable for scaling cubeMan parts to true
+    // Set growth and punch variables for scaling and punching cubeMan parts to true
     growth = true;
+    punch = true;
     // Create Cube Man
     // Start with creating an empty group
     cubeMan = new Object3D();
@@ -212,11 +214,17 @@ function gameLoop() {
             growth = true;
         }
     }
-    if (cubes[98].position.y < 3) {
+    if (cubes[98].position.z < 2 && punch == true) {
         cubes[98].position.z += control.superPunchSpeed;
     }
-    else if (cubes[98].position.y > 1) {
-        cubes[98].position.z += control.superPunchSpeed;
+    else if (cubes[98].position.z > -2 && punch == false) {
+        cubes[98].position.z -= control.superPunchSpeed;
+    }
+    else if (cubes[98].position.z >= -2 && punch == true) {
+        punch = false;
+    }
+    else {
+        punch = true;
     }
 }
 // Setup default renderer

@@ -47,6 +47,7 @@ var cubeMaterial:LambertMaterial;
 var cubeMan: Object3D;
 var cubes: Mesh[];
 var growth: Boolean;
+var punch: Boolean;
 
 
 function init() {
@@ -75,8 +76,9 @@ function init() {
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
     
-    // Set growth variable for scaling cubeMan parts to true
+    // Set growth and punch variables for scaling and punching cubeMan parts to true
     growth = true;
+    punch = true;
     
     // Create Cube Man
     
@@ -263,11 +265,17 @@ function gameLoop(): void {
         }
     }
     
-    if (cubes[98].position.y < 3){
+    if (cubes[98].position.z < 2 && punch == true){
         cubes[98].position.z += control.superPunchSpeed;
     } 
-    else if (cubes[98].position.y > 1){
-        cubes[98].position.z += control.superPunchSpeed;
+    else if (cubes[98].position.z > -2 && punch == false){
+        cubes[98].position.z -= control.superPunchSpeed;
+    }
+    else if (cubes[98].position.z >= -2 && punch == true){
+        punch = false;
+    }
+    else {
+        punch = true;
     }
 }
 
