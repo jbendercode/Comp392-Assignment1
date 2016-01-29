@@ -53,7 +53,7 @@ function init() {
     scene.add(axes);
     console.log("Added Axis Helper to scene...");
     //Add a Plane to the Scene
-    plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/iceTexture.jpg") }), 0, 0, 0);
+    plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg") }), 0, 0, 0);
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
