@@ -220,7 +220,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control(0.01, 0.00);
+    control = new Control(0.01, 0.01, 0.01, 0.00);
     addControl(control);
 
     // Add framerate stats
@@ -240,7 +240,9 @@ function onResize(): void {
 }
 
 function addControl(controlObject: Control): void {
-    gui.add(controlObject, 'rotationSpeed', -0.2, 0.2);
+    gui.add(controlObject, 'rotationSpeedX', -0.2, 0.2);
+    gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
+    gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
 
 }
@@ -265,7 +267,9 @@ function gameLoop(): void {
     renderer.render(scene, camera);
     
     // rotate cubeMan
-    cubeMan.rotation.y += control.rotationSpeed;
+    cubeMan.rotation.x += control.rotationSpeedX;
+    cubeMan.rotation.y += control.rotationSpeedY;
+    cubeMan.rotation.z += control.rotationSpeedZ;
     
     // Auto scaling cubeMan animation loop
     for (var m in cubes){

@@ -1,5 +1,18 @@
 /// <reference path="_reference.ts"/>
+/*
+Author:             Josh Bender
+Modified By:        Josh Bender
+Last Modified:      01/02/2016
+Description:        Main Game file
+Revision History:   Live build
+*/
 // MAIN GAME FILE
+// TO DO LIST
+/*
+Rotate accross all axis
+Swap textures on the cubes
+Spotlight casts shadows
+*/
 // THREEJS Aliases
 var Scene = THREE.Scene;
 var Renderer = THREE.WebGLRenderer;
@@ -56,6 +69,8 @@ function init() {
     console.log("Added Axis Helper to scene...");
     //Add a Plane to the Scene
     plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg") }), 0, 0, 0);
+    plane.castShadow = true;
+    plane.receiveShadow = true;
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
@@ -157,14 +172,14 @@ function init() {
     console.log("Added an Ambient Light to Scene");
     // Add a SpotLight to the scene
     spotLight = new SpotLight(0xFFFFFF);
-    spotLight.position.set(5.6, 43, 10.4);
+    spotLight.position.set(5.6, 23, 10.4);
     spotLight.rotation.set(-0.8, 42.7, 19.5);
     spotLight.castShadow = true;
     scene.add(spotLight);
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0.01, 0.00);
+    control = new Control(0.01, 0.01, 0.01, 0.00);
     addControl(control);
     // Add framerate stats
     addStatsObject();
@@ -179,7 +194,9 @@ function onResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 function addControl(controlObject) {
-    gui.add(controlObject, 'rotationSpeed', -0.2, 0.2);
+    gui.add(controlObject, 'rotationSpeedX', -0.2, 0.2);
+    gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
+    gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
 }
 function addStatsObject() {
@@ -198,7 +215,9 @@ function gameLoop() {
     // render the scene
     renderer.render(scene, camera);
     // rotate cubeMan
-    cubeMan.rotation.y += control.rotationSpeed;
+    cubeMan.rotation.x += control.rotationSpeedX;
+    cubeMan.rotation.y += control.rotationSpeedY;
+    cubeMan.rotation.z += control.rotationSpeedZ;
     // Auto scaling cubeMan animation loop
     for (var m in cubes) {
         if (cubes[m].scale.x < 1.1 && growth == true) {
