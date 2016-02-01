@@ -16,12 +16,14 @@ module objects {
         public rotationSpeedY:number;
         public rotationSpeedZ:number;
         public punchSpeed:number;
+        public textureSwap:boolean;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(rotationSpeedX:number, rotationSpeedY:number, rotationSpeedZ:number, punchSpeed:number) {
+        constructor(rotationSpeedX:number, rotationSpeedY:number, rotationSpeedZ:number, punchSpeed:number, textureSwap:boolean) {
             this.rotationSpeedX = rotationSpeedX;
             this.rotationSpeedY = rotationSpeedY;
             this.rotationSpeedZ = rotationSpeedZ;
             this.punchSpeed = punchSpeed;
+            this.textureSwap = textureSwap;
         }
         
     }

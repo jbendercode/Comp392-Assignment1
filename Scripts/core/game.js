@@ -25,6 +25,7 @@ var Geometry = THREE.Geometry;
 var AxisHelper = THREE.AxisHelper;
 var LambertMaterial = THREE.MeshLambertMaterial;
 var MeshBasicMaterial = THREE.MeshBasicMaterial;
+var ImageUtils = THREE.ImageUtils;
 var Material = THREE.Material;
 var Mesh = THREE.Mesh;
 var Object3D = THREE.Object3D;
@@ -68,7 +69,7 @@ function init() {
     scene.add(axes);
     console.log("Added Axis Helper to scene...");
     //Add a Plane to the Scene
-    plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg") }), 0, 0, 0);
+    plane = new gameObject(new PlaneGeometry(24, 24, 1, 1), new LambertMaterial({ map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg") }), 0, 0, 0);
     plane.castShadow = true;
     plane.receiveShadow = true;
     plane.rotation.x = -0.5 * Math.PI;
@@ -84,7 +85,7 @@ function init() {
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+    cubeMaterial = new LambertMaterial({ map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 4; i++) {
@@ -179,7 +180,7 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0.01, 0.01, 0.01, 0.00);
+    control = new Control(0, 0, 0, 0, false);
     addControl(control);
     // Add framerate stats
     addStatsObject();
@@ -198,6 +199,7 @@ function addControl(controlObject) {
     gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
     gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
+    gui.add(controlObject, 'textureSwap');
 }
 function addStatsObject() {
     stats = new Stats();
@@ -218,6 +220,19 @@ function gameLoop() {
     cubeMan.rotation.x += control.rotationSpeedX;
     cubeMan.rotation.y += control.rotationSpeedY;
     cubeMan.rotation.z += control.rotationSpeedZ;
+    /* Texture of cubeMan STIL NEED TO EDIT
+    if (control.textureSwap == true){
+        for (var m in cubes){
+            cubes[m].material.map = ImageUtils.loadTexture("../../Assets/Textures/iceTexture.jpg");
+            cubes[m].material.needsUpdate = true;
+        }
+    }
+    else{
+        for (var m in cubes){
+            cubes[m].material.map = ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg");
+            cubes[m].material.needsUpdate = true;
+        }
+    }*/
     // Auto scaling cubeMan animation loop
     for (var m in cubes) {
         if (cubes[m].scale.x < 1.1 && growth == true) {

@@ -11,11 +11,12 @@ var objects;
     // CONTROL CLASS ++++++++++++++++++++++++++++++++++++++++++
     var Control = (function () {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Control(rotationSpeedX, rotationSpeedY, rotationSpeedZ, punchSpeed) {
+        function Control(rotationSpeedX, rotationSpeedY, rotationSpeedZ, punchSpeed, textureSwap) {
             this.rotationSpeedX = rotationSpeedX;
             this.rotationSpeedY = rotationSpeedY;
             this.rotationSpeedZ = rotationSpeedZ;
             this.punchSpeed = punchSpeed;
+            this.textureSwap = textureSwap;
         }
         return Control;
     })();
