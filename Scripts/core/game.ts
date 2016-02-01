@@ -1,6 +1,21 @@
 /// <reference path="_reference.ts"/>
 
+/* 
+Author:             Josh Bender
+Modified By:        Josh Bender
+Last Modified:      01/02/2016
+Description:        Main Game file
+Revision History:   Live build
+*/
+
 // MAIN GAME FILE
+
+// TO DO LIST
+/*
+Rotate accross all axis
+Swap textures on the cubes
+Spotlight casts shadows
+*/
 
 // THREEJS Aliases
 import Scene = THREE.Scene;
@@ -70,6 +85,7 @@ function init() {
         new PlaneGeometry(24, 24, 1, 1),
         new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg") }),
         0, 0, 0);
+        plane.castShadow = true;
 
     plane.rotation.x = -0.5 * Math.PI;
 
