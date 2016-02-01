@@ -86,6 +86,7 @@ function init() {
         new LambertMaterial({ map: THREE.ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg") }),
         0, 0, 0);
         plane.castShadow = true;
+        plane.receiveShadow = true;
 
     plane.rotation.x = -0.5 * Math.PI;
 
