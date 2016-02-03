@@ -225,7 +225,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0);
+    control = new Control(0, 0, 0, 0, true);
     addControl(control);
 
     // Add framerate stats
