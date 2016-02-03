@@ -27,7 +27,7 @@ module objects {
         public textureSwap(textureSwapped:boolean, container:THREE.Object3D):void{
             var textureToUse:string;
             // Check which texture to use
-            if (textureSwapped == false) {textureToUse = "../../Assets/Textures/iceTexture.jpg";}
+            if (textureSwapped == false){textureToUse = "../../Assets/Textures/iceTexture.jpg";}
             else {textureToUse = "../../Assets/Textures/metalTexture2.jpg";}
             for (var m in container){
                 m.material.uniforms.texture.value = THREE.ImageUtils.loadTexture(textureToUse);

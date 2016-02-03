@@ -249,7 +249,7 @@ function addControl(controlObject: Control): void {
     gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
     gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
-    gui.add(controlObject, 'textureSwap').onChange(control.textureSwap(textureSwapped, cubeMan));
+    gui.add(controlObject, 'textureSwap', [textureSwapped, "../../Assets/Textures/iceTexture.jpg"]);
 
 }
 
