@@ -58,7 +58,7 @@ var cubeMan;
 var cubes;
 var growth;
 var punch;
-var textureSwapped;
+var textureSwapped = false;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();

@@ -62,9 +62,9 @@ var cubeGeometry:CubeGeometry;
 var cubeMaterial:LambertMaterial;
 var cubeMan: Object3D;
 var cubes: Mesh[];
-var growth: Boolean;
-var punch: Boolean;
-var textureSwapped: Boolean;
+var growth: boolean;
+var punch: boolean;
+var textureSwapped: boolean;
 
 
 function init() {
@@ -260,17 +260,6 @@ function addStatsObject() {
     stats.domElement.style.left = '0px';
     stats.domElement.style.top = '0px';
     document.body.appendChild(stats.domElement);
-}
-
-function textureSwap():void{
-    var textureToUse:string;
-    // Check which texture to use
-    if (textureSwapped == false){textureToUse = "../../Assets/Textures/iceTexture.jpg";}
-    else {textureToUse = "../../Assets/Textures/metalTexture2.jpg";}
-    for (var m in cubeMan){
-        m.material.uniforms.texture.value = ImageUtils.loadTexture(textureToUse);
-        m.material.needsUpdate = true;
-    }
 }
 
 // Setup main game loop
