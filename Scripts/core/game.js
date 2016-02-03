@@ -58,7 +58,7 @@ var cubeMan;
 var cubes;
 var growth;
 var punch;
-var textureSwapped = false;
+var textureSwapped;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
@@ -202,7 +202,7 @@ function addControl(controlObject) {
     gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
     gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
-    gui.add(controlObject, 'textureSwap');
+    gui.add(controlObject, 'textureSwap').onChange(control.textureSwap(textureSwapped, cubeMan));
 }
 function addStatsObject() {
     stats = new Stats();
@@ -211,20 +211,6 @@ function addStatsObject() {
     stats.domElement.style.left = '0px';
     stats.domElement.style.top = '0px';
     document.body.appendChild(stats.domElement);
-}
-function textureSwap() {
-    var textureToUse;
-    // Check which texture to use
-    if (textureSwapped == false) {
-        textureToUse = "../../Assets/Textures/iceTexture.jpg";
-    }
-    else {
-        textureToUse = "../../Assets/Textures/metalTexture2.jpg";
-    }
-    for (var m in cubeMan) {
-        m.material.uniforms.texture.value = ImageUtils.loadTexture(textureToUse);
-        m.material.needsUpdate = true;
-    }
 }
 // Setup main game loop
 function gameLoop() {
