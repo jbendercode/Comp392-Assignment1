@@ -5,7 +5,7 @@ Author:             Josh Bender
 Modified By:        Josh Bender
 Last Modified:      01/02/2016
 Description:        Control Class for the GUI objects
-Revision History:   Live buil
+Revision History:   Live build
 */
 
 module objects {
@@ -16,15 +16,12 @@ module objects {
         public rotationSpeedY:number;
         public rotationSpeedZ:number;
         public punchSpeed:number;
-        public textureSwap:boolean;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(rotationSpeedX:number, rotationSpeedY:number, rotationSpeedZ:number, punchSpeed:number, textureSwap:boolean) {
+        constructor(rotationSpeedX:number, rotationSpeedY:number, rotationSpeedZ:number, punchSpeed:number) {
             this.rotationSpeedX = rotationSpeedX;
             this.rotationSpeedY = rotationSpeedY;
             this.rotationSpeedZ = rotationSpeedZ;
             this.punchSpeed = punchSpeed;
-            this.textureSwap = textureSwap;
         }
-        
     }
 }

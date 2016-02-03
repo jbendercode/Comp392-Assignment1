@@ -58,6 +58,7 @@ var cubeMan;
 var cubes;
 var growth;
 var punch;
+var textureSwapped;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
@@ -78,6 +79,8 @@ function init() {
     // Set growth and punch variables for scaling and punching cubeMan parts to true
     growth = true;
     punch = true;
+    // Initialize texture swapped as false
+    textureSwapped = false;
     // Create Cube Man
     // Start with creating an empty group
     cubeMan = new Object3D();
@@ -180,7 +183,7 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0, false);
+    control = new Control(0, 0, 0, 0);
     addControl(control);
     // Add framerate stats
     addStatsObject();
@@ -209,6 +212,20 @@ function addStatsObject() {
     stats.domElement.style.top = '0px';
     document.body.appendChild(stats.domElement);
 }
+function textureSwap() {
+    var textureToUse;
+    // Check which texture to use
+    if (textureSwapped == false) {
+        textureToUse = "../../Assets/Textures/iceTexture.jpg";
+    }
+    else {
+        textureToUse = "../../Assets/Textures/metalTexture2.jpg";
+    }
+    for (var m in cubeMan) {
+        m.material.uniforms.texture.value = ImageUtils.loadTexture(textureToUse);
+        m.material.needsUpdate = true;
+    }
+}
 // Setup main game loop
 function gameLoop() {
     stats.update();
@@ -220,19 +237,6 @@ function gameLoop() {
     cubeMan.rotation.x += control.rotationSpeedX;
     cubeMan.rotation.y += control.rotationSpeedY;
     cubeMan.rotation.z += control.rotationSpeedZ;
-    /* Texture of cubeMan STIL NEED TO EDIT
-    if (control.textureSwap == true){
-        for (var m in cubes){
-            cubes[m].material.map = ImageUtils.loadTexture("../../Assets/Textures/iceTexture.jpg");
-            cubes[m].material.needsUpdate = true;
-        }
-    }
-    else{
-        for (var m in cubes){
-            cubes[m].material.map = ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg");
-            cubes[m].material.needsUpdate = true;
-        }
-    }*/
     // Auto scaling cubeMan animation loop
     for (var m in cubes) {
         if (cubes[m].scale.x < 1.1 && growth == true) {

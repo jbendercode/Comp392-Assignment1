@@ -64,6 +64,7 @@ var cubeMan: Object3D;
 var cubes: Mesh[];
 var growth: Boolean;
 var punch: Boolean;
+var textureSwapped: Boolean;
 
 
 function init() {
@@ -97,6 +98,9 @@ function init() {
     // Set growth and punch variables for scaling and punching cubeMan parts to true
     growth = true;
     punch = true;
+    
+    // Initialize texture swapped as false
+    textureSwapped = false;
     
     // Create Cube Man
     
@@ -221,7 +225,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0, false);
+    control = new Control(0, 0, 0, 0);
     addControl(control);
 
     // Add framerate stats
@@ -258,6 +262,17 @@ function addStatsObject() {
     document.body.appendChild(stats.domElement);
 }
 
+function textureSwap():void{
+    var textureToUse:string;
+    // Check which texture to use
+    if (textureSwapped == false){textureToUse = "../../Assets/Textures/iceTexture.jpg";}
+    else {textureToUse = "../../Assets/Textures/metalTexture2.jpg";}
+    for (var m in cubeMan){
+        m.material.uniforms.texture.value = ImageUtils.loadTexture(textureToUse);
+        m.material.needsUpdate = true;
+    }
+}
+
 // Setup main game loop
 function gameLoop(): void {
     stats.update();
@@ -272,20 +287,6 @@ function gameLoop(): void {
     cubeMan.rotation.x += control.rotationSpeedX;
     cubeMan.rotation.y += control.rotationSpeedY;
     cubeMan.rotation.z += control.rotationSpeedZ;
-    
-    /* Texture of cubeMan STIL NEED TO EDIT
-    if (control.textureSwap == true){
-        for (var m in cubes){
-            cubes[m].material.map = ImageUtils.loadTexture("../../Assets/Textures/iceTexture.jpg");
-            cubes[m].material.needsUpdate = true;
-        }
-    }
-    else{
-        for (var m in cubes){
-            cubes[m].material.map = ImageUtils.loadTexture("../../Assets/Textures/metalTexture2.jpg");
-            cubes[m].material.needsUpdate = true;
-        }
-    }*/
     
     // Auto scaling cubeMan animation loop
     for (var m in cubes){
