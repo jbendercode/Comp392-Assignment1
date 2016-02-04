@@ -10,13 +10,6 @@ Revision History:   Live build
 
 // MAIN GAME FILE
 
-// TO DO LIST
-/*
-Rotate accross all axis
-Swap textures on the cubes
-Spotlight casts shadows
-*/
-
 // THREEJS Aliases
 import Scene = THREE.Scene;
 import Renderer = THREE.WebGLRenderer;
@@ -110,7 +103,6 @@ function init() {
     console.log("Added Cube Man to scene...");
     
     // Set Mat and Geometry to use for cubes
-    console.log(cubeColour);
     cubeMaterial = new LambertMaterial({ color: String(cubeColour), map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     
