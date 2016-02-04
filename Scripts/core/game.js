@@ -81,7 +81,7 @@ function init() {
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ color: String(cubeColour), map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+    cubeMaterial = new LambertMaterial({ map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg"), color: String(cubeColour) });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 4; i++) {
