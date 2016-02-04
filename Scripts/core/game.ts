@@ -64,6 +64,7 @@ var cubeMan: Object3D;
 var cubes: Mesh[];
 var growth: boolean;
 var punch: boolean;
+var cubeColour: Color;
 
 
 function init() {
@@ -75,7 +76,9 @@ function init() {
     setupCamera(); // setup the camera
     
     cubes = []; // Initialize the array to hold the cubes
-	
+    
+    cubeColour = new Color(0x00ff00);
+    
     // add an axis helper to the scene
     axes = new AxisHelper(15);
     scene.add(axes);
@@ -107,7 +110,7 @@ function init() {
     console.log("Added Cube Man to scene...");
     
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ color:0x00ff00, map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+    cubeMaterial = new LambertMaterial({ color: String(cubeColour), map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     
     //Add Cubes to the Cube Man
@@ -274,7 +277,7 @@ function gameLoop(): void {
     cubeMan.rotation.z += control.rotationSpeedZ;
     
     // Update cube colours
-    cubeMaterial.color = new Color(control.colour);
+    cubeColour = new Color(control.colour);
 
     // Auto scaling cubeMan animation loop
     for (var m in cubes){
