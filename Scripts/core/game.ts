@@ -70,7 +70,7 @@ function init() {
     
     cubes = []; // Initialize the array to hold the cubes
     
-    cubeColour = new Color(0xFFFFFF);
+    cubeColour = new THREE.Color(0xFFFFFF);
     
     // add an axis helper to the scene
     axes = new AxisHelper(15);
