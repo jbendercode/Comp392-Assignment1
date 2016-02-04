@@ -70,7 +70,7 @@ function init() {
     
     cubes = []; // Initialize the array to hold the cubes
     
-    cubeColour = new Color(0x00ff00);
+    cubeColour = new Color("0x00ff00");
     
     // add an axis helper to the scene
     axes = new AxisHelper(15);
@@ -212,8 +212,8 @@ function init() {
     spotLight.position.set(5.6, 23, 10.4);
     spotLight.rotation.set(-0.8, 42.7, 19.5);
     spotLight.castShadow = true;
-    //spotLight.shadowCameraFar = 1000;
-    //spotLight.shadowCameraNear = 0.1;
+    spotLight.shadowCameraFar = 1000;
+    spotLight.shadowCameraNear = 0.1;
     spotLight.intensity = 2;
     scene.add(spotLight);
     console.log("Added a SpotLight Light to Scene");
