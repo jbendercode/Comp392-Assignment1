@@ -110,7 +110,7 @@ function init() {
     console.log("Added Cube Man to scene...");
     
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ opacity: 0.7, color: String(cubeColour), map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+    cubeMaterial = new LambertMaterial({ color: String(cubeColour), map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     
     //Add Cubes to the Cube Man
@@ -216,9 +216,11 @@ function init() {
 	
     // Add a SpotLight to the scene
     spotLight = new SpotLight(0xFFFFFF);
-    spotLight.position.set(5.6, 23, 10.4);
-    spotLight.rotation.set(-0.8, 42.7, 19.5);
+    spotLight.position.set(4, 30, 12);
+    spotLight.rotation.set(0, 0, 0);
     spotLight.castShadow = true;
+    spotLight.shadowCameraFar = 1000;
+    spotLight.shadowCameraNear = 0.1;
     scene.add(spotLight);
     console.log("Added a SpotLight Light to Scene");
     
