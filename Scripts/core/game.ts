@@ -107,7 +107,7 @@ function init() {
     console.log("Added Cube Man to scene...");
     
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+    cubeMaterial = new LambertMaterial({ color:0x00ff00, map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     
     //Add Cubes to the Cube Man
@@ -273,8 +273,10 @@ function gameLoop(): void {
     cubeMan.rotation.y += control.rotationSpeedY;
     cubeMan.rotation.z += control.rotationSpeedZ;
     
-    // Auto scaling cubeMan animation loop
+    // Auto scaling cubeMan animation loop and update colour
     for (var m in cubes){
+        cubes[m].material = new LambertMaterial({ color: control.colour, map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+        
         if (cubes[m].scale.x < 1.1 && growth == true){
             cubes[m].scale.x += 0.007;
             cubes[m].scale.y += 0.007;
