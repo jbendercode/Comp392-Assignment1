@@ -220,9 +220,11 @@ function gameLoop() {
     cubeMan.rotation.x += control.rotationSpeedX;
     cubeMan.rotation.y += control.rotationSpeedY;
     cubeMan.rotation.z += control.rotationSpeedZ;
-    // Auto scaling cubeMan animation loop and update colour
+    // Auto scaling cubeMan animation loop
     for (var m in cubes) {
-        cubes[m].material = new LambertMaterial({ color: control.colour, map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+        if (cubes[0].material != new LambertMaterial({ color: control.colour, map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") })) {
+            cubes[m].material = new LambertMaterial({ color: control.colour, map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
+        }
         if (cubes[m].scale.x < 1.1 && growth == true) {
             cubes[m].scale.x += 0.007;
             cubes[m].scale.y += 0.007;
