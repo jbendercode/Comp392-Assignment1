@@ -220,7 +220,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0, Number(cubeColour));
+    control = new Control(0, 0, 0, 0, cubeColour.getHex());
     addControl(control);
 
     // Add framerate stats

@@ -179,7 +179,7 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0, Number(cubeColour));
+    control = new Control(0, 0, 0, 0, cubeColour.getHex());
     addControl(control);
     // Add framerate stats
     addStatsObject();
