@@ -59,7 +59,7 @@ function init() {
     setupRenderer(); // setup the default renderer
     setupCamera(); // setup the camera
     cubes = []; // Initialize the array to hold the cubes
-    cubeColour = new Color(0x00ff00);
+    cubeColour = new Color(0xFFFFFF);
     // add an axis helper to the scene
     axes = new AxisHelper(15);
     scene.add(axes);
