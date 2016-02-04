@@ -180,6 +180,7 @@ function init() {
     spotLight.castShadow = true;
     spotLight.shadowCameraFar = 1000;
     spotLight.shadowCameraNear = 0.1;
+    spotLight.intensity = 2;
     scene.add(spotLight);
     console.log("Added a SpotLight Light to Scene");
     // add controls
