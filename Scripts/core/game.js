@@ -58,7 +58,6 @@ var cubeMan;
 var cubes;
 var growth;
 var punch;
-var textureSwapped;
 function init() {
     // Instantiate a new Scene object
     scene = new Scene();
@@ -79,8 +78,6 @@ function init() {
     // Set growth and punch variables for scaling and punching cubeMan parts to true
     growth = true;
     punch = true;
-    // Initialize texture swapped as false
-    textureSwapped = false;
     // Create Cube Man
     // Start with creating an empty group
     cubeMan = new Object3D();
@@ -183,7 +180,7 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0);
+    control = new Control(0, 0, 0, 0, cubeMaterial.color.getHex());
     addControl(control);
     // Add framerate stats
     addStatsObject();
@@ -202,7 +199,7 @@ function addControl(controlObject) {
     gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
     gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
-    gui.add(controlObject, 'textureSwap', [textureSwapped, "../../Assets/Textures/iceTexture.jpg"]);
+    gui.addColor(controlObject, 'colour');
 }
 function addStatsObject() {
     stats = new Stats();

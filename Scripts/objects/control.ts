@@ -3,7 +3,7 @@
 /* 
 Author:             Josh Bender
 Modified By:        Josh Bender
-Last Modified:      01/02/2016
+Last Modified:      04/02/2016
 Description:        Control Class for the GUI objects
 Revision History:   Live build
 */
@@ -16,23 +16,15 @@ module objects {
         public rotationSpeedY:number;
         public rotationSpeedZ:number;
         public punchSpeed:number;
+        public colour:number;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor(rotationSpeedX:number, rotationSpeedY:number, rotationSpeedZ:number, punchSpeed:number) {
+        constructor(rotationSpeedX:number, rotationSpeedY:number, rotationSpeedZ:number, punchSpeed:number, colour:number) {
             this.rotationSpeedX = rotationSpeedX;
             this.rotationSpeedY = rotationSpeedY;
             this.rotationSpeedZ = rotationSpeedZ;
             this.punchSpeed = punchSpeed;
+            this.colour = colour;
         }
         
-        public textureSwap(textureSwapped:boolean, container:THREE.Object3D):void{
-            var textureToUse:string;
-            // Check which texture to use
-            if (textureSwapped == false){textureToUse = "../../Assets/Textures/iceTexture.jpg";}
-            else {textureToUse = "../../Assets/Textures/metalTexture2.jpg";}
-            for (var m in container){
-                m.material.uniforms.texture.value = THREE.ImageUtils.loadTexture(textureToUse);
-                m.material.needsUpdate = true;
-            }
-        }
     }
 }

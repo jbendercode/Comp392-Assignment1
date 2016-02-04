@@ -64,7 +64,6 @@ var cubeMan: Object3D;
 var cubes: Mesh[];
 var growth: boolean;
 var punch: boolean;
-var textureSwapped: boolean;
 
 
 function init() {
@@ -98,9 +97,6 @@ function init() {
     // Set growth and punch variables for scaling and punching cubeMan parts to true
     growth = true;
     punch = true;
-    
-    // Initialize texture swapped as false
-    textureSwapped = false;
     
     // Create Cube Man
     
@@ -225,7 +221,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0);
+    control = new Control(0, 0, 0, 0, cubeMaterial.color.getHex());
     addControl(control);
 
     // Add framerate stats
@@ -249,7 +245,7 @@ function addControl(controlObject: Control): void {
     gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
     gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
-    gui.add(controlObject, 'textureSwap', [textureSwapped, "../../Assets/Textures/iceTexture.jpg"]);
+    gui.addColor(controlObject, 'colour');
 
 }
 
