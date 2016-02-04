@@ -59,7 +59,7 @@ function init() {
     setupRenderer(); // setup the default renderer
     setupCamera(); // setup the camera
     cubes = []; // Initialize the array to hold the cubes
-    cubeColour = new THREE.Color(0xFFFFFF);
+    cubeColour = new Color(0xFFFFFF);
     // add an axis helper to the scene
     axes = new AxisHelper(15);
     scene.add(axes);
