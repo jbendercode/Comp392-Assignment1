@@ -198,7 +198,7 @@ function addControl(controlObject) {
     gui.add(controlObject, 'rotationSpeedY', -0.2, 0.2);
     gui.add(controlObject, 'rotationSpeedZ', -0.2, 0.2);
     gui.add(controlObject, 'punchSpeed', 0, 0.2);
-    gui.addColor(controlObject, 'colour');
+    gui.addColor(controlObject, 'colour').listen();
 }
 function addStatsObject() {
     stats = new Stats();
