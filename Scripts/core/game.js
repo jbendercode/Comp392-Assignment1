@@ -81,7 +81,7 @@ function init() {
     scene.add(cubeMan);
     console.log("Added Cube Man to scene...");
     // Set Mat and Geometry to use for cubes
-    cubeMaterial = new LambertMaterial({ map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg"), color: String(cubeColour) });
+    cubeMaterial = new LambertMaterial({ color: String(cubeColour), map: ImageUtils.loadTexture("../../Assets/Textures/metalTexture.jpg") });
     cubeGeometry = new CubeGeometry(1, 1, 1);
     //Add Cubes to the Cube Man
     for (var i = 0; i < 4; i++) {
@@ -179,7 +179,7 @@ function init() {
     console.log("Added a SpotLight Light to Scene");
     // add controls
     gui = new GUI();
-    control = new Control(0, 0, 0, 0, cubeMaterial.color.getHex());
+    control = new Control(0, 0, 0, 0, cubeColour.getHex());
     addControl(control);
     // Add framerate stats
     addStatsObject();
