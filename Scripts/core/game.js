@@ -220,7 +220,7 @@ function gameLoop() {
     cubeMan.rotation.y += control.rotationSpeedY;
     cubeMan.rotation.z += control.rotationSpeedZ;
     // Update cube colours
-    cubeColour = new Color(control.colour);
+    cubeMaterial.color = new Color(control.colour);
     // Auto scaling cubeMan animation loop
     for (var m in cubes) {
         if (cubes[m].scale.x < 1.1 && growth == true) {
